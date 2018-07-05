@@ -32,10 +32,10 @@ http://localhost/api.php?withdraw=180
 ```
 * you can actually only use ?withdraw=xxx
 * if you don't use any parameter you'll receive instructions
-* via API endpoint you receive a json in this shape like this if you ask for 180
+* via API endpoint you receive a json in this shape like this if you ask for 280
 
 ```
-domain/api.php?withdraw=280
+http://localhost/api.php?withdraw=280
 ```
 |Note|Amount|
 |---|---|
