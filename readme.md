@@ -5,13 +5,6 @@ This project simulates a cash machine (ATM).
 ## Getting Started
 
 * clone the project
-* run composer install in root directory of project
- ```
-composer install
-  ```
-
-### Prerequisites
-
 * Install composer if not installed yet.
 
 ```
@@ -20,15 +13,22 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece38
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```
+* run composer install
+ ```
+composer install
+ ```
+
+## Prerequisites
+* to use the API you should run a lokal webserver with docker or MAMP
 
 ## How to use
 * use via CLI from projects root directory and follow the instructions
 ```
 php api.php
 ```
-* use via API endpoint
+* use via API endpoint on web server or localhost
 ```
-domain/api.php?withdraw=xxx
+http://localhost/api.php?withdraw=180
 ```
 * you can actually only use ?withdraw=xxx
 * if you don't use any parameter you'll receive instructions
