@@ -9,15 +9,11 @@ class ParamCashController extends CashController {
    */
   public function sendWelcome() {
     $welcome_message =
-      '--------------------------------<br>'
-      . 'Welcome to Cash Machine 3000.<br>'
-      . '--------------------------------<br>'
-      . 'Your amount of money is infinite because you are awesome!<br>'
-      . 'Available Notes are $100, $50, $20, $10.<br>'
-      . '--------------------------------<br>'
-      . 'Available commands<br>'
-      . '--------------------------------<br>'
-      . '"?withdraw=xxx" - withdraws xxx amount of money<br>';
+      '<p>Welcome to Cash Machine 3000.</p>'
+      . '<p>Your amount of money is infinite because you are awesome!<br>'
+      . 'Available Notes are $100, $50, $20, $10.</p>'
+      . '<p>Available commands<br>'
+      . '"?withdraw=xxx" - withdraws xxx amount of money</p>';
     $this->view->display($welcome_message);
   }
   
