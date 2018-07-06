@@ -46,7 +46,7 @@ class CashMachine {
     $biggestAmount = 2000000000;
     if ($amount > $biggestAmount) {
       throw new NoteUnavailableException(
-        'Our money printing gnome wants to have a break from time to time. Please enter a smaller number than ' . $biggestAmount . '.' . PHP_EOL
+        'Our money printing gnome wants to have a break from time to time. Please enter a smaller number than ' . $biggestAmount . '.'
       );
     }
     $money = array();
