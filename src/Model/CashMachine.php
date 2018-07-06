@@ -6,7 +6,7 @@ use Careship\Exception\NoteUnavailableException;
 
 class CashMachine {
   
-  private $notes = array();
+  private $notes = [];
   
   /**
    * CashMachine constructor.
@@ -44,7 +44,7 @@ class CashMachine {
    * @return mixed
    */
   protected function calculateNotes($amount) {
-    $money = array();
+    $money = [];
     foreach ($this->notes as $note) {
       $money[$note] = 0;
       while ($amount - $note >= 0) {
