@@ -15,7 +15,7 @@ class ParamCashController extends CashController {
       . 'Your amount of money is infinite because you are awesome!<br>'
       . 'Available Notes are $100, $50, $20, $10.<br>'
       . '--------------------------------<br>'
-      . '--------Available commands------<br>'
+      . 'Available commands<br>'
       . '--------------------------------<br>'
       . '"?withdraw=xxx" - withdraws xxx amount of money<br>';
     $this->view->display($welcome_message);
