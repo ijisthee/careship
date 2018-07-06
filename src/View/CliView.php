@@ -15,6 +15,7 @@ class CliView extends View {
    * @param array $money
    */
   public function displayMoney(array $money) {
+    ksort($money);
     $total = 0;
     foreach ($money as $note => $amount) {
       $total += $note * $amount;
