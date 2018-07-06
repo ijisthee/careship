@@ -22,11 +22,8 @@ class CashMachine {
    * @throws \Careship\Exception\NoteUnavailableException
    */
   public function withdrawCash($amount) {
-    if (!is_numeric($amount)) {
-      throw new \InvalidArgumentException('Please enter a number.' . PHP_EOL);
-    }
-    if ($amount < 0) {
-      throw new \InvalidArgumentException('Please enter a number higher than 0.' . PHP_EOL);
+    if ($amount < 0 or !ctype_digit($amount)) {
+      throw new \InvalidArgumentException('Please enter a whole number higher than 0.' . PHP_EOL);
     }
     try {
       return $this->calculateNotes($amount);
@@ -49,7 +46,7 @@ class CashMachine {
     $biggestAmount = 2000000000;
     if ($amount > $biggestAmount) {
       throw new NoteUnavailableException(
-        'Try a number smaller than ' . $biggestAmount . '.' . PHP_EOL
+        'Our money printing gnome wants to have a break from time to time. Please enter a smaller number than ' . $biggestAmount . '.' . PHP_EOL
       );
     }
     $money = array();
