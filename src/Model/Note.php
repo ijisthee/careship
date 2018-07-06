@@ -2,7 +2,10 @@
 
 namespace Careship\Model;
 
-
+/**
+ * Class Note
+ * @package Careship\Model
+ */
 class Note {
   private $value = 0;
   

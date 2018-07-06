@@ -2,11 +2,15 @@
 
 namespace Careship\View;
 
-
+/**
+ * Class CliView
+ * @package Careship\View
+ *
+ */
 class CliView extends View {
   
   /**
-   * Displays the amount of notes
+   * Displays the amount of notes for CLIs
    *
    * @param array $money
    */

@@ -6,6 +6,10 @@ use Careship\Exception\NoteUnavailableException;
 use Careship\Model\CashMachine;
 use Careship\View\IView;
 
+/**
+ * Class CashController
+ * @package Careship\Controller
+ */
 abstract class CashController {
   
   /**

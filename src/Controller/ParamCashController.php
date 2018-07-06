@@ -2,6 +2,10 @@
 
 namespace Careship\Controller;
 
+/**
+ * Class ParamCashController
+ * @package Careship\Controller
+ */
 class ParamCashController extends CashController {
   
   /**

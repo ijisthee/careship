@@ -6,6 +6,9 @@ use Careship\Exception\NoteUnavailableException;
 
 class CashMachine {
   
+  /**
+   * @var array|\Careship\Model\Note[]
+   */
   private $notes = [];
   
   /**
@@ -20,6 +23,7 @@ class CashMachine {
    * @param $amount
    * @return mixed
    * @throws \Careship\Exception\NoteUnavailableException
+   * @throws \InvalidArgumentException
    */
   public function withdrawCash($amount) {
     if ($amount < 0 or !ctype_digit($amount)) {

@@ -2,8 +2,20 @@
 
 namespace Careship\View;
 
-
+/**
+ * Class View
+ * @package Careship\View
+ */
 abstract class View implements IView {
+  
+  /**
+   * Displays common messages
+   *
+   * @param $message
+   */
+  public function display($message) {
+    echo $message . PHP_EOL;
+  }
   
   /**
    * Displays the amount of notes
@@ -14,11 +26,14 @@ abstract class View implements IView {
     print_r($money);
   }
   
+  /**
+   * Displays error messages
+   *
+   * @param $message
+   */
   public function displayError($message) {
     echo $message . PHP_EOL;
   }
   
-  public function display($message) {
-    echo $message . PHP_EOL;
-  }
+  
 }

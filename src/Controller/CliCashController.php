@@ -2,7 +2,10 @@
 
 namespace Careship\Controller;
 
-
+/**
+ * Class CliCashController
+ * @package Careship\Controller
+ */
 class CliCashController extends CashController {
   
   /**

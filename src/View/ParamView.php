@@ -2,10 +2,13 @@
 
 namespace Careship\View;
 
-
+/**
+ * Class ParamView
+ * @package Careship\View
+ */
 class ParamView extends View {
   /**
-   * Returns the amount of notes as a json
+   * Prints the amount of notes as a json
    *
    * @param array $money
    */
