@@ -5,7 +5,7 @@ namespace Careship\Controller;
 class ParamCashController extends CashController {
   
   /**
-   * return welcome message to user
+   * Returns welcome message to user
    */
   public function sendWelcome() {
     $welcome_message =
