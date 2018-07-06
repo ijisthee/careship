@@ -25,11 +25,16 @@ class CashMachine {
     if ($amount < 0 or !ctype_digit($amount)) {
       throw new \InvalidArgumentException('Please enter a whole number higher than 0.' . PHP_EOL);
     }
-    try {
-      return $this->calculateNotes($amount);
-    } catch (NoteUnavailableException $e) {
-      throw $e;
+    if (!$this->isAmountPossible($amount)) {
+      throw new NoteUnavailableException('Amount must be divisible by 10');
     }
+    if ($amount > $this->getBiggestPossibleAmount()) {
+      throw new NoteUnavailableException(
+        'Our money printing gnome wants to have a break from time to time.' . PHP_EOL
+        . 'Please enter a smaller number than ' . $this->getBiggestPossibleAmount() . '.'
+      );
+    }
+    return $this->calculateNotes($amount);
   }
   
   /**
@@ -37,18 +42,8 @@ class CashMachine {
    *
    * @param $amount
    * @return mixed
-   * @throws \Careship\Exception\NoteUnavailableException
    */
   protected function calculateNotes($amount) {
-    if (!$this->isAmountPossible($amount)) {
-      throw new NoteUnavailableException('Amount must be divisible by 10');
-    }
-    $biggestAmount = 2000000000;
-    if ($amount > $biggestAmount) {
-      throw new NoteUnavailableException(
-        'Our money printing gnome wants to have a break from time to time. Please enter a smaller number than ' . $biggestAmount . '.'
-      );
-    }
     $money = array();
     foreach ($this->notes as $note) {
       $money[$note] = 0;
@@ -68,5 +63,16 @@ class CashMachine {
    */
   protected function isAmountPossible($amount) {
     return $amount % 10 == 0;
+  }
+  
+  /**
+   * Returns the maximum possible amount of money per request.
+   * This is important because the calculation loop becomes inefficient
+   * with very big integers
+   *
+   * @return int
+   */
+  protected function getBiggestPossibleAmount() {
+    return 2000000000;
   }
 }
