@@ -7,13 +7,13 @@ use Careship\Exception\NoteUnavailableException;
 class CashMachine {
   
   /**
-   * @var array|\Careship\Model\Note[]
+   * @var array
    */
   private $notes = [];
   
   /**
    * CashMachine constructor.
-   * @param Note[] $notes
+   * @param array $notes
    */
   public function __construct(array $notes) {
     $this->notes = $notes;
